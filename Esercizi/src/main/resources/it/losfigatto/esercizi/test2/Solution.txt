@@ -1,0 +1,13 @@
+
+ANSWER:
+
+We do not need no-arg constructor in a serializable class because we will be restoring the state of the object 
+not constructing a new object. During deserialization, the fields of non-serializable classes will be initialized 
+using the public or protected no-arg constructor of the class. 
+
+If in Test2NotSerialize I add a costructor with arguments, we have an error because if I extends class from other class, 
+and this class do not implement Serilizable interface, then it must have a no-arg constructor (explicitly defined by user 
+if any constructors exist)!
+This requirement exist because of when jvm will deserialize your object it may not found in serialized data a superclass 
+(which did not implement Serializable interface), so jvm will have to instantiate implicitly this class through 
+a no-arg constructor.

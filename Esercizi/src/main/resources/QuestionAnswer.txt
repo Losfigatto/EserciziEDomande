@@ -1,0 +1,46 @@
+# QUESTION:
+
+	I would like to know the detailed difference between ActionServlet and Action class?
+
+ANSWER:
+	ActionServlet acts as a front controller and delegates its responsibility 
+	of controller to various action classes. 
+	Action classes act as the controller in the MVC pattern. Action classes respond to a user action, 
+	execute business logic (or call upon other classes to do that), and then return a result that 
+	tells Struts what view to render. 
+
+# QUESTION:
+
+	What is the difference between Abstract class and Interface? 
+	How do we choose which one to use?
+
+ANSWER:
+	The main difference are: 
+	
+	- you can implements many interfaces, but you can extends only one abstract class 
+	- you can have some concrete method in an abstract class, but not in an interface 
+	
+	So if you need to build a skeleton with some functionality already ready you have to use an abstract class. 
+	Instead if you need to inform a class to guarantee some operation is better an interface. 
+	If you look at the java.util package you will see many examples of interfaces and abstract classes. 
+	
+	For example Collection and List are interfaces, but AbstractList is an abstract class used for both Vector and ArrayList.
+
+	NOTE FROM ORACLE DOCS:
+
+	Interface defines the contract between the client and functionality provider. 
+	Meaning, we can define objects with different implementations and behaviors but which share the same meaning 
+	
+	Abstraction: Keeping things as generic as possible. 
+	In Object Oriented world, specific objects will usually are extensions of Abstract classes, sharing the generic behaviour. 
+
+
+# QUESTION:
+
+	Do we need to implement cloneable interface for singleton class. It's right or wrong? please explain.
+
+ANSWER:
+
+	You don't need to implements Cloneable in the singleton pattern. 
+	Singleton means that you need only one object for that class. So it is incorrect to 
+	have a second instance and clone a class is a method to have another instance..

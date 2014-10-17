@@ -1,0 +1,2 @@
+ANSWER:
+	TestA() is wrong because, final int b=a; where a is variable not a constant value
