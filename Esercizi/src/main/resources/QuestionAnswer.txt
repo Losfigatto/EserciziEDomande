@@ -44,3 +44,23 @@ ANSWER:
 	You don't need to implements Cloneable in the singleton pattern. 
 	Singleton means that you need only one object for that class. So it is incorrect to 
 	have a second instance and clone a class is a method to have another instance..
+	
+# QUESTION:
+
+	How Annotations are working in Java?
+	How you can implement a custom annotation?
+	
+ANSWER:
+	
+	Annotations is a way to put a metadata on some language construct e.g. class, variable, field, method. It means that 
+	if you need to inform about some properties of the construct
+	
+	@Retention(RetentionPolicy.RUNTIME) //SOURCE,CLASS
+	@Target(ElementType.METHOD) //can use in method only OR ElementType.FIELD, ElementType.METHOD, ElementType.PARAMETER, ElementType.CONSTRUCTOR,...
+	public @interface Test {
+ 
+		//should ignore this test?
+		public boolean enabled() default true;
+ 
+	}
+	
